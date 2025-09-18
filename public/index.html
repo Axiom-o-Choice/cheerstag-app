@@ -3,20 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CheerTag</title>
+
+        <title>www.cheerstag.nl</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+            rel="stylesheet"
+        />
 
         <style>
+            :root {
+                --ct-black: #231f20;
+                --ct-grey: #e7e7e8;
+                --ct-white: #ffffff;
+
+                --ct-teal: #00a6a4;
+                --ct-pink: #f59297;
+                --ct-cream: #ffebd1;
+
+                /* 
+                --ct-pink: #ffede7;
+                --ct-yellow: #f5e7d6;
+                --ct-red: #802311;
+                --ct-green: #044446;
+                --ct-teal: #2a8687;
+                --ct-green-hover: #033336; 
+                */
+            }
+
             body {
                 width: 100vw;
                 height: 100vh;
 
                 display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
+
+                background-color: var(--ct-cream);
             }
         </style>
     </head>
     <body>
-        www.CheerTag.nl
+        <img src="images/cheerstag.png" width="250px" />
     </body>
 </html>
