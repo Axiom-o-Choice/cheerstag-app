@@ -1,0 +1,70 @@
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --ct-black: #231f20;
+    --ct-grey: #e7e7e8;
+    --ct-white: #ffffff;
+
+    --ct-teal: #00a6a4;
+    --ct-pink: #f59297;
+    --ct-cream: #ffebd1;
+
+    /* 
+    --ct-pink: #ffede7;
+    --ct-yellow: #f5e7d6;
+    --ct-red: #802311;
+    --ct-green: #044446;
+    --ct-teal: #2a8687;
+    --ct-green-hover: #033336; 
+    */
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: var(--ct-black);
+        background-color: var(--ct-white);
+    }
+}
+
+@page {
+    margin: 0;
+    size: 800px 600px;
+}
+
+/* 
+@font-face {
+    font-family: "Montserrat";
+    font-display: swap;
+    src: url("@/assets/fonts/Montserrat") format("wof2");
+} 
+*/
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--ct-cream);
+}
+
+a,
+a:visited,
+a:active {
+    color: var(--ct-teal);
+}
