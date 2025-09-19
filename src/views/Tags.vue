@@ -48,7 +48,7 @@ watch(
         const res = await fetch(`/api/tags/${id.value}`);
         const json = await res.json();
 
-        text.value = json?.text;
+        text.value = json?.result?.text;
     },
     { immediate: true }
 );
