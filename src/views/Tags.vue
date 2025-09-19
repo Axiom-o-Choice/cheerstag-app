@@ -1,7 +1,7 @@
 <template>
     <div class="app">
-        <img src="@/assets/images/logo.png" width="400px" style="margin-top: 60px" />
-        <img src="@/assets/images/visual.png" width="250px" />
+        <img src="@/assets/images/logo.png" width="90%" style="margin-top: 60px" />
+        <img src="@/assets/images/visual.png" width="80%" />
         <!-- 
         <div class="collection">Tags</div>
         <div class="id">{{ id }}</div>
