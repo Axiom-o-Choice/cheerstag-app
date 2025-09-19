@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <img src="@/assets/images/logo.png" width="90%" style="margin-top: 60px" />
-        <img src="@/assets/images/visual.png" width="80%" />
+        <img src="@/assets/images/visual_mobile.png" width="60%" style="margin: 10px 0 40px 0" />
         <!-- 
         <div class="collection">Tags</div>
         <div class="id">{{ id }}</div>
@@ -10,8 +10,21 @@
 
         <template v-if="giver">
             <div class="content">
-                Schrijf hier het bericht voor de ontvanger. Na opslag is het bericht beschikbaar voor de ontvanger en is
-                het niet meer mogelijk het bericht aan te passen.
+                Maak van elk cadeau een onvergetelijk moment.
+                <br /><br />
+                Geef jouw geschenk een DIGITAAL HERINNERINGSMOMENT dat voor altijd meegaat.
+                <br /><br />
+                Een cadeau zonder beleving verliest zijn impact. Met cheerstag geef je meer dan een geschenk; je geeft
+                een herinnering.
+                <br /><br />
+                <ol style="text-align: left">
+                    <li>Schrijf een persoonlijk bericht</li>
+                    <li>Voeg de CheersTag QR Code toe aan je cadeau</li>
+                    <li>Geef &amp; verras de ontvanger met een herinnering voor altijd!</li>
+                </ol>
+                Tag The Moment, Share The Joy!
+                <br /><br />
+                Na het opslaan is het niet meer mogelijk om het bericht aan te passen!
             </div>
 
             <div class="input">
