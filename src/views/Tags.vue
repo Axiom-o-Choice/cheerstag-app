@@ -7,12 +7,13 @@
         <div class="id">{{ id }}</div>
         <div class="hash">{{ hash }}</div>
         -->
-        <div class="content">
-            Schrijf hier het bericht voor de ontvanger. Na opslag is het bericht beschikbaar voor de ontvanger en is het
-            niet meer mogelijk het bericht aan te passen.
-        </div>
 
         <template v-if="giver">
+            <div class="content">
+                Schrijf hier het bericht voor de ontvanger. Na opslag is het bericht beschikbaar voor de ontvanger en is
+                het niet meer mogelijk het bericht aan te passen.
+            </div>
+
             <div class="input">
                 <textarea placeholder="Plaats hier je bericht..." v-model="text"></textarea>
             </div>
@@ -23,6 +24,8 @@
         </template>
 
         <template v-if="receiver">
+            <div class="content">Volgende bericht is voor jou achtergelaten:</div>
+
             <div class="text">{{ text }}</div>
         </template>
 
@@ -76,6 +79,9 @@ const save = async () => {
         },
         body: JSON.stringify({ text: text.value })
     });
+
+    giver.value = false;
+    receiver.value = true;
 };
 </script>
 
@@ -134,5 +140,17 @@ button {
     max-width: 500px;
     text-align: center;
     margin: 8px 40px;
+}
+
+.text {
+    background-color: var(--ct-teal);
+    color: var(--ct-white);
+    width: 60%;
+    padding: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    white-space: pre;
+    border-radius: 8px;
+    margin-bottom: 40px;
 }
 </style>
