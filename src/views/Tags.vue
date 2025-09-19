@@ -8,23 +8,28 @@
         <div class="hash">{{ hash }}</div>
         -->
         <div class="content">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed, reprehenderit voluptate illo in soluta nisi
-            ea odit dignissimos dolor doloremque architecto animi autem, laborum, blanditiis fugiat! Labore explicabo
-            nisi perspiciatis?
+            Schrijf hier het bericht voor de ontvanger. Na opslag is het bericht beschikbaar voor de ontvanger en is het
+            niet meer mogelijk het bericht aan te passen.
         </div>
 
-        <div class="input">
-            <textarea placeholder="Plaats hier je bericht..." v-model="text"></textarea>
-        </div>
+        <template v-if="giver">
+            <div class="input">
+                <textarea placeholder="Plaats hier je bericht..." v-model="text"></textarea>
+            </div>
 
-        <div class="action">
-            <button @click="save">Opslaan</button>
-        </div>
+            <div class="action">
+                <button @click="save">Opslaan</button>
+            </div>
+        </template>
+
+        <template v-if="receiver">
+            <div class="text">{{ text }}</div>
+        </template>
 
         <div class="disclaimer">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus adipisci alias ratione, nulla, suscipit,
-            perferendis distinctio impedit ipsa exercitationem rem laudantium facere molestias magnam tenetur possimus
-            reprehenderit! Libero, sunt laborum.
+            Deze toepassing bevindt zich in een pilotfase. Ingevoerde teksten en gegevens worden uitsluitend gebruikt
+            voor testdoeleinden en niet verder verwerkt en hergebruikt. Wij behouden ons het recht voor om alle
+            ingevoerde teksten en gegevens na 30 dagen te verwijderen.
         </div>
     </div>
 </template>
@@ -41,6 +46,8 @@ const route = useRoute();
 const id = computed(() => route.params.id);
 const hash = computed(() => route.hash.slice(1));
 const text = ref(null);
+const giver = ref(true);
+const receiver = ref(false);
 
 watch(
     id,
@@ -49,6 +56,14 @@ watch(
         const json = await res.json();
 
         text.value = json?.result?.text;
+
+        if (text.value) {
+            giver.value = false;
+            receiver.value = true;
+        } else {
+            giver.value = true;
+            receiver.value = false;
+        }
     },
     { immediate: true }
 );
@@ -74,15 +89,17 @@ const save = async () => {
 }
 
 .content {
-    width: 500px;
+    max-width: 500px;
     text-align: center;
-    padding: 16px;
     font-size: 16px;
+    font-weight: 500;
     line-height: 24px;
+    margin: 8px 40px;
 }
 
 .input {
-    width: 500px;
+    width: 80%;
+    margin: 8px 40px;
 }
 
 textarea {
@@ -98,22 +115,24 @@ textarea {
 }
 
 .action {
-    width: 500px;
+    max-width: 500px;
+    margin: 8px 40px;
 }
 
 button {
     background-color: var(--ct-teal);
     color: var(--ct-white);
-    width: 100%;
+    width: 200px;
     border-radius: 8px;
     border: none;
     line-height: 32px;
 }
 
 .disclaimer {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
-    width: 500px;
+    max-width: 500px;
     text-align: center;
+    margin: 8px 40px;
 }
 </style>
