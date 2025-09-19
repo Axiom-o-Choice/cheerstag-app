@@ -149,7 +149,7 @@ button {
     padding: 24px;
     font-size: 18px;
     line-height: 24px;
-    white-space: pre;
+    white-space: pre-wrap;
     border-radius: 8px;
     margin-bottom: 40px;
 }
