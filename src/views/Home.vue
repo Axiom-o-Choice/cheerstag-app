@@ -22,7 +22,7 @@
             jouw fysieke cadeaus elk cadeau vertelt een verhaal - wij zorgen dat het verhaal nooit verloren gaat"
             <br /><br />
 
-            Dit is een prototype, we horen graag jouw ervaring.
+            Dit is een prototype, <a href="mailto:info@cheerstag.nl">we horen graag jouw ervaring</a>.
         </div>
     </div>
 </template>
